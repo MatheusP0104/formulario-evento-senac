@@ -130,3 +130,22 @@ function marcaDesmarca(caller) {
         var moon = document.getElementById("modal");
         moon.classList.add("show-modal");
     }
+
+function gerarPDF() {
+    var doc = document.getElementById('username').value;
+    var win = window.open('', '','_blank')
+    win.document.write('<html><head>');
+    win.document.write('<style>')
+    win.document.write('h1{font-size:40px; text-align: center;}')
+    win.document.write('p{font-size:30px; text-align:left;}')
+    win.document.write('</style>')
+    win.document.write('</head>');
+    win.document.write('<body>');
+    win.document.write('<h1>Comprovante de Presença</h1>');
+    win.document.write('<p>Comprovamos que o(a) aluno(a) ', doc, ', compareceu ao Evento de empreendedorismo na instituição do Senac Minas Pouso Alegre no dia 28/09/2022  e preencheu o formulário desenvolvido pelos alunos do curso técnico de Desenvolvimento de Sistemas no turno da tarde.');
+    win.document.write('Foi uma honra receber o(a) aluno(a) ', doc, ', esperamos que tenha gostado!');
+    win.document.write('A equipe Senac Minas Pouso Alegre agradece pela sua presença.</p>');
+    win.document.write('</body></html>');
+    win.document.close;
+    win.print();
+    }

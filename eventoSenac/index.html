@@ -1,28 +1,20 @@
 <?php 
-    if(isset($_POST['submit'])){
-        // print_r($_POST['username']);
-        // print_r('<br>');
-        // print_r($_POST['email']);
-        // print_r('<br>');
-        // print_r($_POST['telefone']);
-        // print_r('<br>');
-        // print_r($_POST['feminino']);
-        // print_r('<br>');
-        // print_r($_POST['masculino']);
+    // if(isset($_POST['submit'])){
+       
 
-        include_once('config.php');
+    //     include_once('config.php');
 
-        $nome = $_POST['username'];
-        $email = $_POST['email'];
-        $telefone = $_POST['telefone'];
-        $idade = $_POST['idade'];
-        $genero = $_POST['genero'];
-        $caixa = $_POST['caixa'];
+    //     $nome = $_POST['username'];
+    //     $email = $_POST['email'];
+    //     $telefone = $_POST['telefone'];
+    //     $idade = $_POST['idade'];
+    //     $genero = $_POST['genero'];
+    //     $caixa = $_POST['caixa'];
         
 
-        $result = mysqli_query($conexao, "INSERT INTO usuarios(nome, email, telefone, idade, sexo, curso) VALUES ('$nome','$email','$telefone','$idade','$genero','$caixa')");
+    //     $result = mysqli_query($conexao, "INSERT INTO usuarios(nome, email, telefone, idade, sexo, curso) VALUES ('$nome','$email','$telefone','$idade','$genero','$caixa')");
 
-    }
+    // }
 
 ?>
 
@@ -35,6 +27,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="animation.css">
     <link rel="shortcut icon" href="./ico-logo.png" type="image/x-icon">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" integrity="sha512-qZvrmS2ekKPF2mSznTQsxqPgnpkI4DNTlrdUmTzrDgektczlKNRRhy5X5AAOnx5S09ydFYWWNSfcEqDTTHgtNA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <title>Senac Minas</title>
 </head>
 <body>
@@ -51,8 +44,8 @@
 
     <main class="container">
         <h2>Formulário</h2>
-        <form id="form" action="index.php" method="POST">
-            <div class="input-field" >
+        <form id="form" action="">
+            <div class="input-field">
                 <input required type="text" name="username" id="username" class="inp1"  maxlength="37"   required autocomplete="off"  id="nome" placeholder="Nome">
                 <div class="underline"></div>
             </div>
@@ -101,7 +94,7 @@
                 <input type="checkbox" name="termosUso"  onclick="actived()"  id="termo" value="termo">
                 <label for="termo">Li e Aceito todos os <a  href="./terms.html" onclick="ShowModal()" target="_blank">termos de uso.</a></label>
             </div>
-            <button type="submit" name="submit" id="btn"  onclick="confirmar()" disabled="disabled" value="Confirmar">Confirmar</button>
+            <button type="submit" name="submit" id="btn"  onclick="gerarPDF()" disabled="disabled" value="Confirmar">Confirmar</button>
             
         </form>
        

@@ -137,7 +137,7 @@ function gerarPDF() {
     win.document.write('<html><head>');
     win.document.write('<style>')
     win.document.write('h1{font-size:40px; text-align: center;}')
-    win.document.write('p{font-size:30px; text-align:left;}')
+    win.document.write('p{font-size:30px; text-align:center;}')
     win.document.write('</style>')
     win.document.write('</head>');
     win.document.write('<body>');
